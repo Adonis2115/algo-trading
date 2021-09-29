@@ -12,17 +12,3 @@ router.get('/profile', (req,res) => {
         res.status(200).send(response.data)
     })
 })
-
-router.get('/funds', (req,res) => {
-    fyers.get_funds().then((response) => {
-        res.status(200).send(response.fund_limit)
-    })
-})
-
-router.get('/holdings', (req,res) => {
-    fyers.get_holdings().then((response) => {
-        res.status(200).send(response)
-    })
-})
-
-module.exports = router
