@@ -25,4 +25,10 @@ router.get('/holdings', (req,res) => {
     })
 })
 
+router.get('/marketstatus', (req,res) => {
+    fyers.market_status().then((response) => {
+        res.status(200).send(response)   
+    })
+})
+
 module.exports = router

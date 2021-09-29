@@ -21,17 +21,17 @@ router.post('/basket', (req,res) => {
     })
 })
 
-// router.post('/modifyorder', (req,res) => {
-//     fyers.place_multi_order(req.body).then((response) => {
-//         res.status(200).send(response)
-//     })
-// })
+router.post('/modifyorder', (req,res) => {
+    fyers.modify_order(req.body).then((response) => {
+        res.status(200).send(response)
+    })
+})
 
-// router.post('/modifybasket', (req,res) => {
-//     fyers.place_multi_order(req.body).then((response) => {
-//         res.status(200).send(response)
-//     })
-// })
+router.post('/modifybasket', (req,res) => {
+    fyers.modify_multi_order(req.body).then((response) => {
+        res.status(200).send(response)
+    })
+})
 
 router.post('/cancelorder', (req,res) => {
     fyers.cancel_order(req.body).then((response) => {
