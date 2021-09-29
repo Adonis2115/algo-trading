@@ -7,13 +7,13 @@ fyers.setAppId(Credentials.appID)
 fyers.setRedirectUrl(Credentials.url)
 fyers.setAccessToken(Credentials.token)
 
-router.get('/orders', (req,res) => {
+router.get('/orderbook', (req,res) => {
     fyers.get_orders().then((response) => {
         res.status(200).send(response)
     })
 })
 
-router.get('/orders/:order_id', (req,res) => {
+router.get('/orderbook/:order_id', (req,res) => {
     fyers.get_filtered_orders(req.params.order_id).then((response) => {
         res.status(200).send(response)
     })
