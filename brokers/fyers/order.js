@@ -9,49 +9,49 @@ fyers.setAppId(Credentials.appID)
 fyers.setRedirectUrl(Credentials.url)
 fyers.setAccessToken(Credentials.token)
 
-router.post('/order', (req,res) => {
+router.post('/order', (req, res) => {
     fyers.place_order(req.body).then((response) => {
         res.status(200).send(response)
     })
 })
 
-router.post('/basket', (req,res) => {
+router.post('/basket', (req, res) => {
     fyers.place_multi_order(req.body).then((response) => {
         res.status(200).send(response)
     })
 })
 
-router.post('/modifyorder', (req,res) => {
+router.post('/modifyorder', (req, res) => {
     fyers.modify_order(req.body).then((response) => {
         res.status(200).send(response)
     })
 })
 
-router.post('/modifybasket', (req,res) => {
+router.post('/modifybasket', (req, res) => {
     fyers.modify_multi_order(req.body).then((response) => {
         res.status(200).send(response)
     })
 })
 
-router.post('/cancelorder', (req,res) => {
+router.post('/cancelorder', (req, res) => {
     fyers.cancel_order(req.body).then((response) => {
         res.status(200).send(response)
     })
 })
 
-router.post('/cancelbasket', (req,res) => {
+router.post('/cancelbasket', (req, res) => {
     fyers.cancel_multi_order(req.body).then((response) => {
         res.status(200).send(response)
     })
 })
 
-router.post('/exitposition', (req,res) => {
+router.post('/exitposition', (req, res) => {
     fyers.exit_position(req.body).then((response) => {
         res.status(200).send(response)
     })
 })
 
-router.post('/convertposition', (req,res) => {
+router.post('/convertposition', (req, res) => {
     fyers.convert_position(req.body).then((response) => {
         res.status(200).send(response)
     })

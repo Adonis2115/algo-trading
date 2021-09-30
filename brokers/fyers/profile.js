@@ -7,27 +7,27 @@ fyers.setAppId(Credentials.appID)
 fyers.setRedirectUrl(Credentials.url)
 fyers.setAccessToken(Credentials.token)
 
-router.get('/profile', (req,res) => {
+router.get('/profile', (req, res) => {
     fyers.get_profile().then((response) => {
         res.status(200).send(response.data)
     })
 })
 
-router.get('/funds', (req,res) => {
+router.get('/funds', (req, res) => {
     fyers.get_funds().then((response) => {
         res.status(200).send(response.fund_limit)
     })
 })
 
-router.get('/holdings', (req,res) => {
+router.get('/holdings', (req, res) => {
     fyers.get_holdings().then((response) => {
         res.status(200).send(response)
     })
 })
 
-router.get('/marketstatus', (req,res) => {
+router.get('/marketstatus', (req, res) => {
     fyers.market_status().then((response) => {
-        res.status(200).send(response)   
+        res.status(200).send(response)
     })
 })
 
