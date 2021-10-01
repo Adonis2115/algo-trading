@@ -9,6 +9,21 @@ fyers.setAppId(Credentials.appID)
 fyers.setRedirectUrl(Credentials.url)
 fyers.setAccessToken(Credentials.token)
 
+// Return Data Stream instead of console and process it
+function orderNotification() {
+    const reqBody = {
+        dataType: 'orderUpdate'
+    }
+    fyers.fyers_connect(reqBody, function (data) {
+        console.log(data)
+    })
+}
+
+router.get('/ordernotification', (req, res) => {
+    orderNotification()
+    res.status(200).send("Subscribed")
+})
+
 router.post('/order', (req, res) => {
     fyers.place_order(req.body).then((response) => {
         res.status(200).send(response)
@@ -56,10 +71,5 @@ router.post('/convertposition', (req, res) => {
         res.status(200).send(response)
     })
 })
-
-// Real Time Order Notification 
-// function orderSocket(){
-
-// }
 
 module.exports = router

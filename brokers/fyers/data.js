@@ -35,6 +35,7 @@ async function marketDepth(script) {
     return result
 }
 
+// Return Data Stream instead of console and process it
 function subscribe(script) {
     const reqBody = {
         symbol: script,
