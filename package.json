@@ -11,7 +11,9 @@
   "license": "ISC",
   "dependencies": {
     "express": "^4.17.1",
-    "fyers-api-v2": "^1.0.3"
+    "fyers-api-v2": "^1.0.3",
+    "pg": "^8.7.1",
+    "tulind": "^0.8.20"
   },
   "devDependencies": {
     "nodemon": "^2.0.13"

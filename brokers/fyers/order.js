@@ -15,7 +15,14 @@ function orderNotification() {
         dataType: 'orderUpdate'
     }
     fyers.fyers_connect(reqBody, function (data) {
-        console.log(data)
+        return data
+        // console.log(data)
+    })
+}
+
+function order(orderDetail){
+    fyers.place_order(orderDetail).then((response) => {
+        return response
     })
 }
 
@@ -25,13 +32,19 @@ router.get('/ordernotification', (req, res) => {
 })
 
 router.post('/order', (req, res) => {
-    fyers.place_order(req.body).then((response) => {
+    order(req.body).then((response) => {
         res.status(200).send(response)
     })
 })
 
+function basketOrder(orderDetail){
+    fyers.place_multi_order(orderDetail).then((response) => {
+        return response
+    })
+}
+
 router.post('/basket', (req, res) => {
-    fyers.place_multi_order(req.body).then((response) => {
+    basketOrder(req.body).then((response) => {
         res.status(200).send(response)
     })
 })
